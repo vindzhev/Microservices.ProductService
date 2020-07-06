@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MicroservicesPOC.Shared\MicroservicesPOC.Shared.csproj" />
+    <PackageReference Include="MicroservicesPOC.Shared" Version="1.0.0" />
   </ItemGroup>
 
 </Project>
