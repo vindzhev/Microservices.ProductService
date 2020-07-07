@@ -8,13 +8,14 @@ namespace ProductService.API
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
     
-    using Steeltoe.Discovery.Client;
     using Newtonsoft.Json.Serialization;
 
     using ProductService.Application;
     using ProductService.Infrastructure;
     using ProductService.API.Extensions;
+
     using MicroservicesPOC.Shared.Extensions;
+    using MicroservicesPOC.Shared.API.Extensions;
 
     public class Startup
     {
@@ -25,7 +26,7 @@ namespace ProductService.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDiscoveryClient(Configuration);
+            services.AddConsulConfig(this.Configuration);
 
             //dotnet ef migrations add Initial --project ../ProductService.Infrastructure --context ProductDbContext --output-dir Persistance/Migrations --verbose
             services
@@ -65,7 +66,7 @@ namespace ProductService.API
 
             app.UseAuthorization();
 
-            app.UseDiscoveryClient();
+            app.UseConsul(this.Configuration);
 
             app.UseEndpoints(endpoints => endpoints.MapControllers());
         }

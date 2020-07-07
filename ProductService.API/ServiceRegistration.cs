@@ -1,7 +1,6 @@
 ﻿namespace ProductService.API
 {
     using MicroservicesPOC.Shared;
-    
     using Microsoft.Extensions.DependencyInjection;
 
     public static class ServiceRegistration

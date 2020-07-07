@@ -3,7 +3,7 @@
     using System;
     using System.Collections.Generic;
 
-    using MicroservicesPOC.Shared.Common.Entities;
+    using MicroservicesPOC.Shared.Domain;
 
     public class Product : Entity<Guid>
     {

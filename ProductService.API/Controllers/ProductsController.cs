@@ -5,7 +5,7 @@
 
     using Microsoft.AspNetCore.Mvc;
 
-    using MicroservicesPOC.Shared.Controllers;
+    using MicroservicesPOC.Shared.API.Controllers;
 
     using ProductService.Application.Products.Queries;
     using ProductService.Application.Products.Commands;

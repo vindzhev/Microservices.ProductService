@@ -2,7 +2,7 @@
 {
     using System;
 
-    using MicroservicesPOC.Shared.Common.Entities;
+    using MicroservicesPOC.Shared.Domain;
 
     public class Cover : Entity<Guid>
     {
