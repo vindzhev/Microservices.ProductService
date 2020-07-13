@@ -20,8 +20,8 @@
 
         public class FindAllProductsQueryHandler : IRequestHandler<FindProductByCodeQuery, ProductDTO>
         {
-            private readonly IProductRepository _productRepository;
             private readonly IMapper _mapper;
+            private readonly IProductRepository _productRepository;
 
             public FindAllProductsQueryHandler(IProductRepository productRepository, IMapper mapper)
             {

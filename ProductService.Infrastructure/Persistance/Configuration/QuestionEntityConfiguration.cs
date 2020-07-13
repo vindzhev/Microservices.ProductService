@@ -9,10 +9,11 @@
     {
         public void Configure(EntityTypeBuilder<Question> builder)
         {
-            builder.ToTable("Questions");
+            builder.ToTable("Questions").HasKey(x => x.Id);
 
             builder.Property(x => x.Code).IsRequired();
             builder.Property(x => x.Index).IsRequired();
+            builder.Property(x => x.Text).IsRequired().HasMaxLength(200);
 
             builder.HasOne(x => x.Product).WithMany(x => x.Questions);
 

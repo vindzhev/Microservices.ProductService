@@ -1,6 +1,7 @@
 ﻿namespace ProductService.Application.Products.Commands
 {
     using System;
+    using System.Linq;
     using System.Threading;
     using System.Threading.Tasks;
     using System.Collections.Generic;
@@ -10,12 +11,12 @@
     
     using ProductService.Domain.Entities;
     
+    using MicroservicesPOC.Shared.Common.Models;
+    
     using ProductService.Application.Common.Interfaces;
     using ProductService.Application.Common.Models.Cover;
     using ProductService.Application.Common.Models.Product;
     using ProductService.Application.Common.Models.Question;
-    using System.Linq;
-    using MicroservicesPOC.Shared.Common.Models;
 
     public class CreateDraftProductCommand : IRequest<Guid>
     {

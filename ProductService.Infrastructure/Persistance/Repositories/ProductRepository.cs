@@ -29,24 +29,20 @@
 
         public async Task<ICollection<Product>> FindAllActive(CancellationToken cancellationToken) =>
             await this._context.Products
-                .Include(x => x.Covers)
+                .Include("Covers")
                 .Include("Questions.Choices")
                 .Where(x => x.Status == ProductStatus.Active)
                 .ToArrayAsync(cancellationToken);
 
-        public async Task<Product> FindById(Guid id, CancellationToken cancellationToken)
-        {
-            var a = await this._context.Products
-                .Include(x => x.Covers)
+        public async Task<Product> FindById(Guid id, CancellationToken cancellationToken) =>
+            await this._context.Products
+                .Include("Covers")
                 .Include("Questions.Choices")
                 .FirstOrDefaultAsync(x => x.Id == id, cancellationToken);
 
-            return a;
-        }
-
         public async Task<Product> FindOne(string productCode, CancellationToken cancellationToken) =>
             await this._context.Products
-                .Include(x => x.Covers)
+                .Include("Covers")
                 .Include("Questions.Choices")
                 .FirstOrDefaultAsync(x => x.Code.Equals(productCode, StringComparison.InvariantCultureIgnoreCase), cancellationToken);
 
