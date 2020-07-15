@@ -5,7 +5,7 @@
     using ProductService.Domain.Entities;
     using ProductService.Application.Common.Models.Question;
 
-    using MicroservicesPOC.Shared.Common.Models;
+    using MicroservicesPOC.Shared.Domain.Enums;
 
     public class QuestionProfile : Profile
     {

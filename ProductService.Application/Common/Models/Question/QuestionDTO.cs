@@ -2,7 +2,7 @@
 {
     using System;
    
-    using MicroservicesPOC.Shared.Common.Models;
+    using MicroservicesPOC.Shared.Domain.Enums;
 
     public class QuestionDTO
     {

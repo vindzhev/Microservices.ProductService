@@ -12,7 +12,7 @@
             builder.ToTable("Choices").HasKey(x => x.Id);
 
             builder.Property(x => x.Code).IsRequired();
-            builder.Property(x => x.Label).IsRequired():
+            builder.Property(x => x.Label).IsRequired();
 
             builder.HasOne(x => x.Question).WithMany(x => x.Choices);
         }

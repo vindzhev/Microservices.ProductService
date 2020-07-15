@@ -15,6 +15,8 @@
 
         Task<bool> CheckExists(Guid id, CancellationToken cancellationToken);
 
+        Task<bool> CheckExists(string code, CancellationToken cancellationToken);
+
         Task<Product> FindOne(string productCode, CancellationToken cancellationToken);
 
         Task<Product> FindById(Guid id, CancellationToken cancellationToken);

@@ -11,7 +11,7 @@
     
     using ProductService.Domain.Entities;
     
-    using MicroservicesPOC.Shared.Common.Models;
+    using MicroservicesPOC.Shared.Domain.Enums;
     
     using ProductService.Application.Common.Interfaces;
     using ProductService.Application.Common.Models.Cover;

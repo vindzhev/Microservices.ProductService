@@ -27,6 +27,9 @@
         public async Task<bool> CheckExists(Guid id, CancellationToken cancellationToken) =>
             await this._context.Products.AnyAsync(x => x.Id == id, cancellationToken);
 
+        public async Task<bool> CheckExists(string code, CancellationToken cancellationToken) =>
+            await this._context.Products.AnyAsync(x => x.Code == code, cancellationToken);
+
         public async Task<ICollection<Product>> FindAllActive(CancellationToken cancellationToken) =>
             await this._context.Products
                 .Include("Covers")

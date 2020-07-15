@@ -15,7 +15,7 @@ namespace ProductService.API
     using ProductService.API.Extensions;
 
     using MicroservicesPOC.Shared.Extensions;
-    using MicroservicesPOC.Shared.API.Extensions;
+    using MicroservicesPOC.Shared.API.ServiceDiscovery;
 
     public class Startup
     {
@@ -26,7 +26,7 @@ namespace ProductService.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddConsulConfig(this.Configuration);
+            services.RegisterConsulServices(this.Configuration.GetServiceConfig());
 
             //dotnet ef migrations add Initial --project ../ProductService.Infrastructure --context ProductDbContext --output-dir Persistance/Migrations --verbose
             services
@@ -55,7 +55,10 @@ namespace ProductService.API
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
+            {
+                app.UpdateDatabase();
                 app.UseDeveloperExceptionPage();
+            }
             else app.UseHsts();
 
             //app.UseCustomExceptionHandler();
@@ -65,8 +68,6 @@ namespace ProductService.API
             app.UseRouting();
 
             app.UseAuthorization();
-
-            app.UseConsul(this.Configuration);
 
             app.UseEndpoints(endpoints => endpoints.MapControllers());
         }

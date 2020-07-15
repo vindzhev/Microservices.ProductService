@@ -2,8 +2,7 @@
 {
     using System.Collections.Generic;
 
-    using MicroservicesPOC.Shared.Common.Models;
-
+    using MicroservicesPOC.Shared.Domain.Enums;
     using ProductService.Application.Common.Models.Choice;
 
     public class QuestionorCreationDTO
