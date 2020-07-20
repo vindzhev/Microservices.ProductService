@@ -106,7 +106,7 @@
                             new Choice("KW", "Vegetable")
                     }),
                     new NumericQuestion("AREA", 2, "Area"),
-                    new NumericQuestion("NUM_OF_CLAIM", 3, "Number of claims in the past 5 years"),
+                    new NumericQuestion("NUM_OF_CLAIMS", 3, "Number of claims in the past 5 years"),
                 });
 
                 farmInsurance.Activate();
@@ -121,7 +121,7 @@
                 carInsurance.AddCover("C1", "Assistance", string.Empty, true, null);
 
                 carInsurance.AddQuestions(new List<Question> {
-                    new NumericQuestion("NUM_OF_CLAIM", 3, "Number of claims in the past 5 years")
+                    new NumericQuestion("NUM_OF_CLAIMS", 3, "Number of claims in the past 5 years")
                 });
 
                 carInsurance.Activate();
